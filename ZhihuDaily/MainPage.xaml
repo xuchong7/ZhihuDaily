@@ -7,7 +7,148 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <CollectionViewSource x:Key="cvs" x:Name="cvs" IsSourceGrouped="True" />
+    </Page.Resources>
 
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid x:Name="header" Background="SkyBlue" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btn_Pane" Content="&#xE700;" FontFamily="Segoe MDL2 Assets" FontSize="22" Click="btn_Pane_Click" Height="48" Width="48" />
+                <TextBlock x:Name="header_Content" Margin="10,10,0,0" FontSize="20" Text="首页" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Column="1">
+                <TextBox x:Name="Find_Text" Height="30" Width="200" Margin="0,5,0,0" />
+                <AppBarButton x:Name="Search" Icon="Find" Width="30" Height="36" Margin="5,2,10,0" />
+            </StackPanel>
+        </Grid>
+
+        <SplitView x:Name="splitView" Grid.Row="1" OpenPaneLength="200" CompactPaneLength="48" PaneBackground="SkyBlue" DisplayMode="CompactOverlay" >
+
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" VerticalScrollMode="Auto">
+                <!--<StackPanel Orientation="Vertical">-->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <FlipView x:Name="flip_Image" Height="180">
+                        <FlipView.ItemTemplate>
+                            <DataTemplate>
+                                <Image Width="auto" Height="190" Stretch="UniformToFill" Source="{Binding Image}" />
+                            </DataTemplate>
+                        </FlipView.ItemTemplate>
+                    </FlipView>
+
+                    <StackPanel Grid.Row="1" Orientation="Vertical" Background="Beige">
+                        <ListView x:Name="list_News" SelectionMode="None" IsItemClickEnabled="True" ItemClick="go_Story" ItemsSource="{Binding Source={StaticResource cvs}}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="5" Padding="5">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock x:Name="Title" FontSize="16" Text="{Binding Title}" TextWrapping="Wrap" Grid.Column="1" Margin="5,0,0,0" />
+                                        <Image x:Name="Image" Height="60" Width="70" Source="{Binding Image}" Margin="0,0,5,0" HorizontalAlignment="Right" Grid.Column="0" />
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                            <ListView.GroupStyle>
+                                <GroupStyle>
+                                    <GroupStyle.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock x:Name="news_Group_Header" FontSize="16" Margin="10" Text="{Binding Key}" />
+                                        </DataTemplate>
+                                    </GroupStyle.HeaderTemplate>
+                                </GroupStyle>
+                            </ListView.GroupStyle>
+                        </ListView>
+                    </StackPanel>
+
+                </Grid>
+
+                <!--</StackPanel>-->
+            </ScrollViewer>
+
+            <SplitView.Pane>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <StackPanel x:Name="profile_pane">
+                        <ListView x:Name="list_profile">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="52" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <AppBarButton x:Name="login" Icon="{Binding Icon}" Margin="-20,0,0,0" Height="48" />
+                                        <TextBlock Grid.Column="1" Text="{Binding Content}" FontSize="16" VerticalAlignment="Center" Margin="15,0,0,0" />
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+
+                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden">
+                        <StackPanel x:Name="list_Pane" >
+                            <ListView x:Name="list_section" ItemClick="go_Navigation" IsItemClickEnabled="True">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="52" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="1" Text="{Binding Topic}" FontSize="14" VerticalAlignment="Center" Margin="15,0,0,0" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackPanel>
+                    </ScrollViewer>
+
+
+                    <StackPanel Grid.Row="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="48" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <AppBarSeparator RenderTransformOrigin="0.5,0.5" Margin="5,0,0,0" >
+                                <AppBarSeparator.RenderTransform>
+                                    <CompositeTransform Rotation="90"/>
+                                </AppBarSeparator.RenderTransform>
+                            </AppBarSeparator>
+                        </Grid>
+
+                        <ListView x:Name="setting_pane" ItemClick="go_Setting" IsItemClickEnabled="True" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <AppBarButton x:Name="btn_Setting" Icon="Setting" Height="48" Margin="-20,0,0,0" Click="btn_Settiing_Click" />
+                                <TextBlock Grid.Column="1" Text="设置" FontSize="16" VerticalAlignment="Center" Margin="15,0,0,0" />
+                            </Grid>
+                        </ListView>
+                    </StackPanel>
+
+                </Grid>
+            </SplitView.Pane>
+        </SplitView>
     </Grid>
 </Page>
