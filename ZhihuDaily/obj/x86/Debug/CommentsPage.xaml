@@ -1,0 +1,88 @@
+﻿<Page
+    x:Class="ZhihuDaily.CommentsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ZhihuDaily"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <AppBarButton x:ConnectionId='4' x:Name="btn_Back" Icon="Back" Width="48"                 />
+            <TextBlock x:ConnectionId='5' x:Name="header" Text="评论" FontSize="20" Margin="10,10,0,0" />
+        </StackPanel>
+
+        <Pivot x:ConnectionId='1' x:Name="pivot" Grid.Row="1">
+            <PivotItem Header="长评论" FontSize="18">
+                <ListView x:ConnectionId='3' x:Name="long_lv">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="5,5,5,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Orientation="Vertical">
+                                    <Image x:Name="avatar" Height="40" Width="40" VerticalAlignment="Top" Source="{Binding avatar}" />
+                                </StackPanel>
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="40" />
+                                        <RowDefinition Height="auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock x:Name="user_name" FontSize="13" Text="{Binding author}" />
+                                        <AppBarButton x:Name="upvote" Icon="Like" Width="20" Height="20" Grid.Column="1" />
+                                    </Grid>
+                                    <TextBlock x:Name="comment" FontSize="13" Grid.Row="1" Text="{Binding content}" TextWrapping="Wrap" />
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </PivotItem>
+            <PivotItem Header="短评论" FontSize="18">
+                <ListView x:ConnectionId='2' x:Name="short_lv">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="5,5,5,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Orientation="Vertical">
+                                    <Image x:Name="s_avatar" Height="40" Width="40" Source="{Binding s_avatar}" VerticalAlignment="Top" />
+                                </StackPanel>
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="40" />
+                                        <RowDefinition Height="auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock x:Name="s_user_name" FontSize="13" Text="{Binding s_author}" />
+                                        <AppBarButton x:Name="s_upvote" Icon="Like" Width="10" Height="10" Grid.Column="1" />
+                                    </Grid>
+                                    <TextBlock x:Name="s_comment" FontSize="13" Text="{Binding s_content}" TextWrapping="Wrap" Grid.Row="1" />
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>
+
