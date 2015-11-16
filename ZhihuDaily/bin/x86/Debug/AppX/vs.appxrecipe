@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>694828ca-bad3-4351-b351-8866828a4330</PackageIdentityName>
     <IntermediateOutputPath>C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x86\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>3B28568B62347D5C6A8F15AF7CAC3EE5C844F1CED320841C80AD89D06F5ED67D</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>3B956ACA934ECF27CD9A52623D4D1BA70301BBE410C7255BCDF77D240252E2C0</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>694828ca-bad3-4351-b351-8866828a4330_1.0.0.0_x86__jys5twdgwtes4</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>694828ca-bad3-4351-b351-8866828a4330_jys5twdgwtes4!App</RegisteredUserModeAppID>
     <RegisteredPackageID>694828ca-bad3-4351-b351-8866828a4330</RegisteredPackageID>
@@ -22,7 +22,7 @@
     <AppXManifest Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-16T07:15:53.313</Modified>
+      <Modified>2015-11-16T15:37:39.394</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -68,7 +68,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\entrypoint\ZhihuDaily.exe">
       <PackagePath>entrypoint\ZhihuDaily.exe</PackagePath>
-      <Modified>2015-11-16T07:15:50.516</Modified>
+      <Modified>2015-11-16T15:37:37.973</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -100,7 +100,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-11-16T07:15:52.243</Modified>
+      <Modified>2015-11-16T15:37:38.740</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\System.AppContext.dll">
       <PackagePath>System.AppContext.dll</PackagePath>
@@ -504,11 +504,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\ZhihuDaily.exe">
       <PackagePath>ZhihuDaily.exe</PackagePath>
-      <Modified>2015-11-16T07:15:53.303</Modified>
+      <Modified>2015-11-16T15:37:39.391</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\ZhihuDaily.xr.xml">
       <PackagePath>ZhihuDaily.xr.xml</PackagePath>
-      <Modified>2015-11-16T07:07:07.969</Modified>
+      <Modified>2015-11-16T15:37:37.656</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

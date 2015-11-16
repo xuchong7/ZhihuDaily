@@ -36,4 +36,14 @@ namespace ZhihuDaily
         public string time { get; set; }
         public string likes { get; set; }
     }
+
+
+    public class EditorItem
+    {
+        public string Url { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public string Avatar { get; set; }
+        public string Bio { get; set; }
+    }
 }

@@ -12,20 +12,20 @@
             <RowDefinition Height="48" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid x:ConnectionId='1' x:Name="header" Background="LightBlue">
+        <Grid x:ConnectionId='1' x:Name="header" Background="BlueViolet">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal" >
-                <AppBarButton x:ConnectionId='10' x:Name="btn_Back" Icon="Back"                 Width="48" />
+                <AppBarButton x:ConnectionId='10' x:Name="btn_Back" Icon="Back"                 Width="48" Foreground="White" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Column="1">
                 <!--<AppBarButton x:Name="home" Icon="Home" Width="48" Click="go_Home" />-->
-                <AppBarButton x:ConnectionId='5' x:Name="share" Icon="ReShare" Width="48" />
-                <AppBarButton x:ConnectionId='6' x:Name="star" Icon="Favorite" Width="48"                     />
-                <AppBarButton x:ConnectionId='7' x:Name="comments" Icon="Comment" Width="48"                     />
-                <AppBarButton x:ConnectionId='8' x:Name="upvote" Icon="Like" Width="48" Margin="0,0,10,0" />
+                <AppBarButton x:ConnectionId='5' x:Name="share" Icon="ReShare" Width="48" Foreground="White" />
+                <AppBarButton x:ConnectionId='6' x:Name="star" Icon="Favorite" Width="48"                     Foreground="White" />
+                <AppBarButton x:ConnectionId='7' x:Name="comments" Icon="Comment" Width="48"                     Foreground="White" />
+                <AppBarButton x:ConnectionId='8' x:Name="upvote" Icon="Like" Width="48" Margin="0,0,10,0" Foreground="White" />
                 <TextBlock x:ConnectionId='9' x:Name="like_count" />
             </StackPanel>
         </Grid>

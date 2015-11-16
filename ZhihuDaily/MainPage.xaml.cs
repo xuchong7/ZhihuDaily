@@ -53,17 +53,8 @@ namespace ZhihuDaily
             GetSectionData();
             #endregion
 
-            if (e.Parameter == null || e.Parameter.ToString() == "")
-            {
-                this.header_Content.Text = "首页";
-                source_uri = new Uri("http://news-at.zhihu.com/api/4/news/latest");
-            }
-            else
-            {
-                navigated_item = (Dictionary<string, string>)e.Parameter;
-                this.header_Content.Text = navigated_item["title"];
-                source_uri = new Uri(navigated_item["uri"]);
-            }
+            this.header_Content.Text = "首页";
+            source_uri = new Uri("http://news-at.zhihu.com/api/4/news/latest");
 
             GetStories(source_uri);
         }
@@ -121,65 +112,22 @@ namespace ZhihuDaily
             this.cvs.Source = groups;
 
             //TopStories List
-            if (this.header_Content.Text == "首页")
+
+            JsonArray top_stories_array = json_data.GetNamedArray("top_stories");
+            foreach (var item in top_stories_array)
             {
-                JsonArray top_stories_array = json_data.GetNamedArray("top_stories");
-                foreach (var item in top_stories_array)
-                {
-                    string string_item = item.Stringify();
-                    JsonObject json_item = JsonObject.Parse(string_item);
-                    string title = json_item.GetNamedString("title");
-                    string image = json_item.GetNamedString("image");
-                    string id = json_item.GetNamedNumber("id").ToString();
-                    t_items.Add(new StoryItem { Title = title, Date = "today", Id = id, Image = image });
-                }
+                string string_item = item.Stringify();
+                JsonObject json_item = JsonObject.Parse(string_item);
+                string title = json_item.GetNamedString("title");
+                string image = json_item.GetNamedString("image");
+                string id = json_item.GetNamedNumber("id").ToString();
+                t_items.Add(new StoryItem { Title = title, Date = "today", Id = id, Image = image });
             }
-            else
-            {
-                string title = json_data.GetNamedString("description");
-                string image = json_data.GetNamedString("image");
-                t_items.Add(new StoryItem { Title = title, Image = image, Date = "today", Id = "1" });
-            }
-            
             this.flip_TopStories.ItemsSource = t_items;
         }
         #endregion
 
-        private void btn_Pane_Click(object sender, RoutedEventArgs e)
-        {
-            this.splitView.IsPaneOpen = !this.splitView.IsPaneOpen;
-        }
-
-        private void go_Home(object sender, RoutedEventArgs e)
-        {
-            navigate_item = new Dictionary<string, string>();
-            navigate_item.Add("uri", "http://news-at.zhihu.com/api/4/news/latest");
-            navigate_item.Add("title", "首页");
-            this.Frame.Navigate(typeof(MainPage), navigate_item);
-        }
-
-        private void profile_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            this.Frame.Navigate(typeof(MainPage));
-        }
-
-        private void go_Favorite(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(FavoritePage));
-        }
-
-        private void go_Section(object sender, ItemClickEventArgs e)
-        {
-            SectionItem item = (SectionItem)e.ClickedItem;
-            string uri = "http://news-at.zhihu.com/api/4/theme/" + item.Id;
-            string title = item.Name;
-            navigate_item = new Dictionary<string, string>();
-            navigate_item.Add("title", title);
-            navigate_item.Add("uri", uri);
-            this.Frame.Navigate(typeof(MainPage), navigate_item);
-        }
-
-        private void go_StoryPage(object sender, ItemClickEventArgs e)
+        private void GoStoryPage(object sender, ItemClickEventArgs e)
         {
             StoryItem item = (StoryItem)e.ClickedItem;
             string id = item.Id;
@@ -194,14 +142,40 @@ namespace ZhihuDaily
             this.Frame.Navigate(typeof(storyPage), navigate_item);
         }
 
-        private void go_Home(object sender, ItemClickEventArgs e)
+        private void GoHome(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage));
         }
 
-        private void flip_go_StoryPage(object sender, SelectionChangedEventArgs e)
+        private void GoHome(object sender, ItemClickEventArgs e)
         {
-            
+            this.Frame.Navigate(typeof(MainPage));
+        }
+
+        private void GoFavorite(object sender, ItemClickEventArgs e)
+        {
+            this.Frame.Navigate(typeof(FavoritePage));
+        }
+
+        private void GoFavorite(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(FavoritePage));
+        }
+
+        private void GoSection(object sender, ItemClickEventArgs e)
+        {
+            SectionItem item = (SectionItem)e.ClickedItem;
+            string uri = "http://news-at.zhihu.com/api/4/theme/" + item.Id;
+            string title = item.Name;
+            navigate_item = new Dictionary<string, string>();
+            navigate_item.Add("title", title);
+            navigate_item.Add("uri", uri);
+            this.Frame.Navigate(typeof(SectionPage), navigate_item);
+        }
+
+        private void PaneClick(object sender, RoutedEventArgs e)
+        {
+            this.splitView.IsPaneOpen = !this.splitView.IsPaneOpen;
         }
     }
 }

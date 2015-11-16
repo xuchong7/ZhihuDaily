@@ -132,21 +132,23 @@ namespace ZhihuDaily.ZhihuDaily_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[6];
+            _typeNameTable = new string[7];
             _typeNameTable[0] = "ZhihuDaily.CommentsPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "ZhihuDaily.FavoritePage";
             _typeNameTable[4] = "ZhihuDaily.MainPage";
-            _typeNameTable[5] = "ZhihuDaily.storyPage";
+            _typeNameTable[5] = "ZhihuDaily.SectionPage";
+            _typeNameTable[6] = "ZhihuDaily.storyPage";
 
-            _typeTable = new global::System.Type[6];
+            _typeTable = new global::System.Type[7];
             _typeTable[0] = typeof(global::ZhihuDaily.CommentsPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::ZhihuDaily.FavoritePage);
             _typeTable[4] = typeof(global::ZhihuDaily.MainPage);
-            _typeTable[5] = typeof(global::ZhihuDaily.storyPage);
+            _typeTable[5] = typeof(global::ZhihuDaily.SectionPage);
+            _typeTable[6] = typeof(global::ZhihuDaily.storyPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -184,7 +186,8 @@ namespace ZhihuDaily.ZhihuDaily_XamlTypeInfo
         private object Activate_0_CommentsPage() { return new global::ZhihuDaily.CommentsPage(); }
         private object Activate_3_FavoritePage() { return new global::ZhihuDaily.FavoritePage(); }
         private object Activate_4_MainPage() { return new global::ZhihuDaily.MainPage(); }
-        private object Activate_5_storyPage() { return new global::ZhihuDaily.storyPage(); }
+        private object Activate_5_SectionPage() { return new global::ZhihuDaily.SectionPage(); }
+        private object Activate_6_storyPage() { return new global::ZhihuDaily.storyPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -225,9 +228,16 @@ namespace ZhihuDaily.ZhihuDaily_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 5:   //  ZhihuDaily.storyPage
+            case 5:   //  ZhihuDaily.SectionPage
                 userType = new global::ZhihuDaily.ZhihuDaily_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_5_storyPage;
+                userType.Activator = Activate_5_SectionPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 6:   //  ZhihuDaily.storyPage
+                userType = new global::ZhihuDaily.ZhihuDaily_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_6_storyPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
