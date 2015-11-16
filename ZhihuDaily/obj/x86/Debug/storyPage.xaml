@@ -18,17 +18,24 @@
                 <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal" >
-                <AppBarButton x:ConnectionId='8' x:Name="btn_Back" Icon="Back"                 Width="48" />
+                <AppBarButton x:ConnectionId='10' x:Name="btn_Back" Icon="Back"                 Width="48" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Column="1">
-                <AppBarButton x:ConnectionId='3' x:Name="home" Icon="Home" Width="48"                 />
-                <AppBarButton x:ConnectionId='4' x:Name="share" Icon="ReShare" Width="48" />
-                <AppBarButton x:ConnectionId='5' x:Name="star" Icon="Favorite" Width="48" />
-                <AppBarButton x:ConnectionId='6' x:Name="comments" Icon="Comment" Width="48"                     />
-                <AppBarButton x:ConnectionId='7' x:Name="upvote" Icon="Like" Width="48" Margin="0,0,10,0" />
+                <!--<AppBarButton x:Name="home" Icon="Home" Width="48" Click="go_Home" />-->
+                <AppBarButton x:ConnectionId='5' x:Name="share" Icon="ReShare" Width="48" />
+                <AppBarButton x:ConnectionId='6' x:Name="star" Icon="Favorite" Width="48"                     />
+                <AppBarButton x:ConnectionId='7' x:Name="comments" Icon="Comment" Width="48"                     />
+                <AppBarButton x:ConnectionId='8' x:Name="upvote" Icon="Like" Width="48" Margin="0,0,10,0" />
+                <TextBlock x:ConnectionId='9' x:Name="like_count" />
             </StackPanel>
         </Grid>
         <WebView x:ConnectionId='2' x:Name="wv" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="auto" />
+        <Border x:ConnectionId='3' Name="loading" Grid.Row="1" Margin="50,200,50,350">
+            <ProgressBar IsIndeterminate="True" Width="200" Height="20" HorizontalAlignment="Center" VerticalAlignment="Top" />
+        </Border>
+        <Border x:ConnectionId='4' Name="add_favorite_OK" Grid.Row="1" Background="AliceBlue" Margin="50,450,50,100" Visibility="Collapsed">
+            <TextBlock Text="收藏成功" FontSize="14" HorizontalAlignment="Center" />
+        </Border>
     </Grid>
 </Page>
 

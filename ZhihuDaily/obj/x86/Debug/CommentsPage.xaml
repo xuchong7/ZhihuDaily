@@ -22,15 +22,15 @@
                 <ListView x:ConnectionId='3' x:Name="long_lv">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Margin="5,5,5,10">
+                            <Grid Margin="5,5,5,15">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="auto" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Vertical" Margin="5">
                                     <Image x:Name="avatar" Height="40" Width="40" VerticalAlignment="Top" Source="{Binding avatar}" />
                                 </StackPanel>
-                                <Grid Grid.Column="1">
+                                <Grid Grid.Column="1" Margin="5">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="40" />
                                         <RowDefinition Height="auto" />
@@ -41,7 +41,7 @@
                                             <ColumnDefinition Width="auto" />
                                         </Grid.ColumnDefinitions>
                                         <TextBlock x:Name="user_name" FontSize="13" Text="{Binding author}" />
-                                        <AppBarButton x:Name="upvote" Icon="Like" Width="20" Height="20" Grid.Column="1" />
+                                        <!--<AppBarButton x:Name="upvote" Icon="Like" Width="20" Height="20" Grid.Column="1" />-->
                                     </Grid>
                                     <TextBlock x:Name="comment" FontSize="13" Grid.Row="1" Text="{Binding content}" TextWrapping="Wrap" />
                                 </Grid>

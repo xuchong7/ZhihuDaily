@@ -39,6 +39,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Orientation" />
       <RootProperty Name="Children" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="Background" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Pivot">
@@ -71,6 +72,7 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="Source" />
@@ -92,10 +94,11 @@
       <RootProperty Name="Stretch" />
     </RootType>
     <RootType FullName="ZhihuDaily.CommentsPage" />
-    <RootType FullName="ZhihuDaily.FavoritePage" />
     <RootType FullName="Windows.UI.Xaml.Data.CollectionViewSource">
       <RootProperty Name="IsSourceGrouped" />
     </RootType>
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
+    <RootType FullName="ZhihuDaily.FavoritePage" />
     <RootType FullName="Windows.UI.Xaml.Controls.SplitView">
       <RootProperty Name="OpenPaneLength" />
       <RootProperty Name="CompactPaneLength" />
@@ -112,8 +115,8 @@
     <RootType FullName="Windows.UI.Xaml.Controls.FlipView">
       <RootProperty Name="Height" />
       <RootProperty Name="ItemTemplate" />
+      <RootEvent Name="SelectionChanged" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.GroupStyle">
       <RootProperty Name="HeaderTemplate" />
     </RootType>
@@ -146,6 +149,20 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Width" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Border">
+      <RootProperty Name="Name" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Child" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="Visibility" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ProgressBar">
+      <RootProperty Name="IsIndeterminate" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="ZhihuDaily.storyPage" />
   </Roots.RootTypes>

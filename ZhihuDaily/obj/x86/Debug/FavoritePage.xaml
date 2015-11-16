@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Page.Resources>
-        <CollectionViewSource x:Name="cvs" x:Key="cvs" IsSourceGrouped="True" />
+        <CollectionViewSource x:ConnectionId='1' x:Name="cvs" x:Key="cvs" IsSourceGrouped="True" />
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -16,21 +16,21 @@
             <RowDefinition Height="48" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid x:Name="header" Background="LightBlue">
+        <Grid x:ConnectionId='2' x:Name="header" Background="LightBlue">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal" >
-                <AppBarButton x:Name="btn_Back" Icon="Back" Click="go_Back" Width="48" />
-                <TextBlock x:Name="header_Content" Margin="10,10,0,0" FontSize="20" />
+                <AppBarButton x:ConnectionId='5' x:Name="btn_Back" Icon="Back"                 Width="48" />
+                <TextBlock x:ConnectionId='6' x:Name="header_Content" Margin="10,10,0,0" FontSize="20" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Column="1">
-                <AppBarButton x:Name="share" Icon="ReShare" Width="48" />
+                <AppBarButton x:ConnectionId='4' x:Name="share" Icon="ReShare" Width="48" />
             </StackPanel>
         </Grid>
         <StackPanel Grid.Row="1">
-            <ListView x:Name="list_Favorite" SelectionMode="None" IsItemClickEnabled="True" ItemClick="go_StoryPage" ItemsSource="{Binding Source={StaticResource cvs}}">
+            <ListView x:ConnectionId='3' x:Name="list_Favorite" SelectionMode="None" IsItemClickEnabled="True"                          ItemsSource="{Binding Source={StaticResource cvs}}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -47,3 +47,4 @@
         </StackPanel>
     </Grid>
 </Page>
+

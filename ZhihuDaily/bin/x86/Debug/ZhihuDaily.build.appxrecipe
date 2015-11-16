@@ -39,6 +39,9 @@
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\StoryCss.css">
+      <PackagePath>Assets\StoryCss.css</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
     </AppxPackagedFile>

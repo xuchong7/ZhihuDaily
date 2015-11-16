@@ -40,7 +40,7 @@
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <FlipView x:Name="flip_TopStories" Height="180">
+                    <FlipView x:Name="flip_TopStories" Height="200" >
                         <FlipView.ItemTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -51,7 +51,7 @@
                         </FlipView.ItemTemplate>
                     </FlipView>
 
-                    <StackPanel Grid.Row="1" Orientation="Vertical" Background="Beige">
+                    <StackPanel Grid.Row="1" Orientation="Vertical" Background="White">
                         <ListView x:Name="list_Stories" SelectionMode="None" IsItemClickEnabled="True" ItemClick="go_StoryPage" ItemsSource="{Binding Source={StaticResource cvs}}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>

@@ -449,3 +449,4 @@ C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x
 C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x86\Debug\FavoritePage.xaml
 C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x86\Debug\FavoritePage.xbf
 C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\FavoritePage.xbf
+C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\StoryCss.css

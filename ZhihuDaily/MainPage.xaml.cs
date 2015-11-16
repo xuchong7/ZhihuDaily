@@ -165,7 +165,7 @@ namespace ZhihuDaily
 
         private void go_Favorite(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(MainPage));
+            this.Frame.Navigate(typeof(FavoritePage));
         }
 
         private void go_Section(object sender, ItemClickEventArgs e)
@@ -184,15 +184,24 @@ namespace ZhihuDaily
             StoryItem item = (StoryItem)e.ClickedItem;
             string id = item.Id;
             string title = item.Title;
+            string image = item.Image;
+            string date = item.Date;
             navigate_item = new Dictionary<string, string>();
             navigate_item.Add("id", id);
             navigate_item.Add("title", title);
+            navigate_item.Add("image", image);
+            navigate_item.Add("date", date);
             this.Frame.Navigate(typeof(storyPage), navigate_item);
         }
 
         private void go_Home(object sender, ItemClickEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage));
+        }
+
+        private void flip_go_StoryPage(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
     }
 }
