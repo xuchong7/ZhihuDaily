@@ -16,22 +16,21 @@
             <RowDefinition Height="48" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid x:Name="header" Background="SkyBlue" >
+        <Grid x:Name="header" Background="BlueViolet">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal">
-                <Button x:Name="btn_Pane" Content="&#xE700;" FontFamily="Segoe MDL2 Assets" FontSize="22" Height="48" Width="48" Click="btn_Pane_Click" />
-                <TextBlock x:Name="header_Content" Margin="10,10,0,0" FontSize="20" />
+                <Button x:Name="btn_Pane" Content="&#xE700;" FontFamily="Segoe MDL2 Assets" Foreground="White" FontSize="22" Height="48" Width="48" Click="btn_Pane_Click" />
+                <TextBlock x:Name="header_Content" Margin="10,10,0,0" FontSize="20" Foreground="White" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Column="1">
-                <TextBox x:Name="Find_Text" Height="30" Width="200" Margin="0,5,0,0" />
-                <AppBarButton x:Name="Search" Icon="Find" Width="30" Height="36" Margin="5,2,10,0" />
+                <AppBarButton x:Name="Search" Icon="Find" Width="48" Height="48" Margin="5,0,10,0" Foreground="White" />
             </StackPanel>
         </Grid>
 
-        <SplitView x:Name="splitView" Grid.Row="1" OpenPaneLength="200" CompactPaneLength="48" PaneBackground="SkyBlue" DisplayMode="CompactOverlay" >
+        <SplitView x:Name="splitView" Grid.Row="1" OpenPaneLength="200" CompactPaneLength="48" PaneBackground="BlueViolet" DisplayMode="CompactOverlay" Foreground="White" >
 
             <ScrollViewer VerticalScrollBarVisibility="Hidden" VerticalScrollMode="Auto">
                 <!--<StackPanel Orientation="Vertical">-->
@@ -90,18 +89,7 @@
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
                     <StackPanel x:Name="profile_pane">
-                        <ListView x:Name="list_profile" IsItemClickEnabled="True" ItemClick="profile_ItemClick">
-                            <ListViewItem>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="52" />
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <AppBarButton x:Name="login" Icon="People" Margin="-20,0,0,0" Height="48" />
-                                    <TextBlock Grid.Column="1" Text="登录" FontSize="16" VerticalAlignment="Center" Margin="15,0,0,0" />
-                                </Grid>
-                            </ListViewItem>
-                        </ListView>
+                        
                         <ListView IsItemClickEnabled="True" ItemClick="go_Home">
                             <ListViewItem>
                                 <Grid>
@@ -109,8 +97,8 @@
                                         <ColumnDefinition Width="52" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <AppBarButton x:Name="home" Icon="Home" Margin="-20,0,0,0" Height="48" Click="go_Home" />
-                                    <TextBlock Grid.Column="1" Text="首页" FontSize="16" VerticalAlignment="Center" Margin="15,0,0,0" />
+                                    <AppBarButton x:Name="home" Icon="Home" Margin="-22,0,0,0" Height="48" Click="go_Home" Foreground="White" />
+                                    <TextBlock Grid.Column="1" Text="首页" FontSize="16" VerticalAlignment="Center" Margin="15,0,0,0" Foreground="White" />
                                 </Grid>
                             </ListViewItem>
                         </ListView>
@@ -121,8 +109,8 @@
                                         <ColumnDefinition Width="52" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <AppBarButton x:Name="favorite" Icon="Favorite" Margin="-20,0,0,0" Height="48" Click="go_Favorite" />
-                                    <TextBlock Grid.Column="1" Text="收藏" FontSize="16" VerticalAlignment="Center" Margin="15,0,0,0" />
+                                    <AppBarButton x:Name="favorite" Icon="Favorite" Margin="-22,0,0,0" Height="48" Click="go_Favorite" Foreground="White" />
+                                    <TextBlock Grid.Column="1" Text="收藏" FontSize="16" VerticalAlignment="Center" Margin="15,0,0,0" Foreground="White" />
                                 </Grid>
                             </ListViewItem>
                         </ListView>
@@ -138,7 +126,7 @@
                                                 <ColumnDefinition Width="52" />
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
-                                            <TextBlock Grid.Column="1" Text="{Binding Name}" FontSize="14" VerticalAlignment="Center" Margin="15,0,0,0" />
+                                            <TextBlock Grid.Column="1" Text="{Binding Name}" FontSize="14" VerticalAlignment="Center" Margin="15,0,0,0" Foreground="White" />
                                         </Grid>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
@@ -146,14 +134,13 @@
                         </StackPanel>
                     </ScrollViewer>
 
-
                     <StackPanel Grid.Row="2">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="48" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <AppBarSeparator RenderTransformOrigin="0.5,0.5" Margin="5,0,0,0" >
+                            <AppBarSeparator RenderTransformOrigin="0.5,0.5" Margin="0,0,0,0" Foreground="White" >
                                 <AppBarSeparator.RenderTransform>
                                     <CompositeTransform Rotation="90"/>
                                 </AppBarSeparator.RenderTransform>
@@ -166,8 +153,8 @@
                                     <ColumnDefinition Width="auto" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <AppBarButton x:Name="btn_Setting" Icon="Setting" Height="48" Margin="-20,0,0,0" />
-                                <TextBlock Grid.Column="1" Text="设置" FontSize="16" VerticalAlignment="Center" Margin="15,0,0,0" />
+                                <AppBarButton x:Name="btn_Setting" Icon="Setting" Height="48" Margin="-22,0,0,0" Foreground="White" />
+                                <TextBlock Grid.Column="1" Text="设置" FontSize="16" VerticalAlignment="Center" Margin="15,0,0,0" Foreground="White" />
                             </Grid>
                         </ListView>
                     </StackPanel>

@@ -16,17 +16,17 @@
             <RowDefinition Height="48" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid x:Name="header" Background="LightBlue">
+        <Grid x:Name="header" Background="BlueViolet">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal" >
-                <AppBarButton x:Name="btn_Back" Icon="Back" Click="go_Back" Width="48" />
-                <TextBlock x:Name="header_Content" Margin="10,10,0,0" FontSize="20" />
+                <AppBarButton x:Name="btn_Back" Icon="Back" Click="go_Back" Width="48" Foreground="White" />
+                <TextBlock x:Name="header_Content" Margin="10,10,0,0" FontSize="20" Foreground="White" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Column="1">
-                <AppBarButton x:Name="share" Icon="ReShare" Width="48" />
+                <AppBarButton x:Name="share" Icon="ReShare" Width="48" Foreground="White" />
             </StackPanel>
         </Grid>
         <StackPanel Grid.Row="1">
