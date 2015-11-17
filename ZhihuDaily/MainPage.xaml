@@ -23,7 +23,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="btn_Pane" Content="&#xE700;" FontFamily="Segoe MDL2 Assets" Foreground="White" FontSize="22" Height="48" Width="48" Click="PaneClick" />
-                <TextBlock x:Name="header_Content" Margin="10,10,0,0" FontSize="20" Foreground="White" />
+                <TextBlock x:Name="header_Content" Text="知乎日报" Margin="10,10,0,0" FontSize="18" Foreground="White" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Column="1">
                 <AppBarButton x:Name="Search" Icon="Find" Width="48" Height="48" Margin="5,0,10,0" Foreground="White" />

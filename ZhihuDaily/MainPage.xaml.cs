@@ -53,9 +53,7 @@ namespace ZhihuDaily
             GetSectionData();
             #endregion
 
-            this.header_Content.Text = "首页";
             source_uri = new Uri("http://news-at.zhihu.com/api/4/news/latest");
-
             GetStories(source_uri);
         }
 
