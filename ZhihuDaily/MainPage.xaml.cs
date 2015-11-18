@@ -84,30 +84,33 @@ namespace ZhihuDaily
             string data = await client.GetStringAsync(source_uri);
             JsonObject json_data = JsonObject.Parse(data);
 
-            //Stories List
-            JsonArray stories_array = json_data.GetNamedArray("stories");
-            string date = "今日消息";
-            foreach (var item in stories_array)
-            {
-                string string_item = item.Stringify();
-                JsonObject json_item = JsonObject.Parse(string_item);
-                string title = json_item.GetNamedString("title");
-                string image;
-                try
-                {
-                    image = json_item.GetNamedArray("images")[0].GetString();
-                }
-                catch (Exception)
-                {
+            #region Get stories list
 
-                    image = "http://pic1.zhimg.com/84dadf360399e0de406c133153fc4ab8_t.jpg";
+            for (int i = 0; i < 3; i++)
+            {
+                int howManyDaysBefore = 0 - i;
+                string date = DateTime.Now.AddDays(howManyDaysBefore).ToString("yyyy年MM月dd日");
+                string stringDate = date.Replace("年", "").Replace("月", "").Replace("日", "");
+                Uri sourceUri = new Uri("http://news.at.zhihu.com/api/4/news/before/" + stringDate);
+
+                #region 获取新闻列表
+                string stringData = await client.GetStringAsync(sourceUri);
+                JsonObject jsonData = JsonObject.Parse(stringData);
+                JsonArray jsonStoriesArray = jsonData.GetNamedArray("stories");
+                foreach (var item in jsonStoriesArray)
+                {
+                    string stringItem = item.ToString();
+                    JsonObject jsonItem = JsonObject.Parse(stringItem);
+                    string title = jsonItem.GetNamedString("title");
+                    string id = jsonItem.GetNamedNumber("id").ToString();
+                    string image = jsonItem.GetNamedArray("images")[0].ToString().Replace("\"", "");
+                    st_items.Add(new StoryItem { Date = date, Title = title, Id = id, Image = image });
                 }
-                string id = json_item.GetNamedNumber("id").ToString();
-                st_items.Add(new StoryItem { Title = title, Image = image, Id = id, Date = date });
+                #endregion
             }
-            //Data binding
             var groups = from n in st_items group n by n.Date;
             this.cvs.Source = groups;
+            #endregion
 
             //TopStories List
 
@@ -122,6 +125,16 @@ namespace ZhihuDaily
                 t_items.Add(new StoryItem { Title = title, Date = "today", Id = id, Image = image });
             }
             this.flip_TopStories.ItemsSource = t_items;
+        }
+
+        private void dataSource_LoadItemsCompleted(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void dataSource_LoadItemsStarted(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
         #endregion
 

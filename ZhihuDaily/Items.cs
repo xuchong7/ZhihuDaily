@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ZhihuDaily
-{
-    
+{   
     /// <summary>
     /// 各种数据项集合的类
     /// </summary>

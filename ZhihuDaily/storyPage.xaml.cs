@@ -48,13 +48,14 @@ namespace ZhihuDaily
                 story_title = navigated_item["title"];
                 story_date = navigated_item["date"];
                 Uri story_uri = new Uri("http://news-at.zhihu.com/api/4/news/" + navigated_item["id"]);
+                Uri extra_uri = new Uri("http://news-at.zhihu.com/api/4/story-extra/" + navigated_item["id"]);
                 this.loading.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                GetStory(story_uri);
+                GetStory(story_uri, extra_uri);
                 this.loading.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             }
         }
 
-        private async void GetStory(Uri story_uri)
+        private async void GetStory(Uri story_uri, Uri extra_uri)
         {
             
             try
@@ -77,7 +78,22 @@ namespace ZhihuDaily
             {
                 this.wv.NavigateToString("<body><h>No story!!!</h></body>");
             }
-            
+
+            try
+            {
+                HttpClient client = new HttpClient();
+                string string_extra = await client.GetStringAsync(extra_uri);
+                JsonObject json_extra = JsonObject.Parse(string_extra);
+                string likeCount = json_extra.GetNamedNumber("popularity").ToString();
+                string commentsCount = json_extra.GetNamedNumber("comments").ToString();
+                this.like_count.Text = likeCount;
+                this.comments_count.Text = commentsCount;
+            }
+            catch (Exception)
+            {
+                this.like_count.Text = "0";
+                this.comments_count.Text = "0";
+            }
         }
 
         private void go_Back(object sender, RoutedEventArgs e)

@@ -158,7 +158,6 @@
                             </Grid>
                         </ListView>
                     </StackPanel>
-
                 </Grid>
             </SplitView.Pane>
         </SplitView>

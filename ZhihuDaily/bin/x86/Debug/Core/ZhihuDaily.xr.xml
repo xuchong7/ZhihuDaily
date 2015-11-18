@@ -60,7 +60,6 @@
       <RootProperty Name="Items" />
       <RootProperty Name="ItemsPanel" />
       <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Width" />
       <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
@@ -163,7 +162,6 @@
       <RootProperty Name="Name" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Child" />
-      <RootProperty Name="Background" />
       <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ProgressBar">

@@ -22,7 +22,7 @@
     <AppXManifest Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-16T15:37:39.394</Modified>
+      <Modified>2015-11-18T07:50:17.167</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -68,7 +68,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\entrypoint\ZhihuDaily.exe">
       <PackagePath>entrypoint\ZhihuDaily.exe</PackagePath>
-      <Modified>2015-11-16T15:37:37.973</Modified>
+      <Modified>2015-11-18T07:50:15.582</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -100,7 +100,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-11-16T15:37:38.740</Modified>
+      <Modified>2015-11-18T07:50:16.395</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\System.AppContext.dll">
       <PackagePath>System.AppContext.dll</PackagePath>
@@ -504,11 +504,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\ZhihuDaily.exe">
       <PackagePath>ZhihuDaily.exe</PackagePath>
-      <Modified>2015-11-16T15:37:39.391</Modified>
+      <Modified>2015-11-18T07:50:17.164</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\ZhihuDaily.xr.xml">
       <PackagePath>ZhihuDaily.xr.xml</PackagePath>
-      <Modified>2015-11-16T15:37:37.656</Modified>
+      <Modified>2015-11-18T07:46:37.938</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
