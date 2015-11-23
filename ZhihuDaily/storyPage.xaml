@@ -18,24 +18,121 @@
                 <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal" >
-                <AppBarButton x:Name="btn_Back" Icon="Back" Click="go_Back" Width="48" Foreground="White" />
+                <AppBarButton x:Name="btn_Back" Icon="Back" Click="GoBack" Width="48" Foreground="White" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Column="1">
-                <!--<AppBarButton x:Name="home" Icon="Home" Width="48" Click="go_Home" />-->
-                <AppBarButton x:Name="share" Icon="ReShare" Width="48" Foreground="White" />
+                <AppBarButton x:Name="share" Icon="Refresh" Width="48" Foreground="White" Click="ReFresh" />
                 <AppBarButton x:Name="star" Icon="Favorite" Width="48" Click="AddFavorite" Foreground="White" />
-                <AppBarButton x:Name="comments" Icon="Comment" Width="34" Click="go_Comments" Foreground="White" />
+                <AppBarButton x:Name="comments" Icon="Comment" Width="34" Click="GoComments" Foreground="White" />
                 <TextBlock x:Name="comments_count"  FontSize="14" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="2,0,10,0" />
                 <AppBarButton x:Name="upvote" Icon="Like" Width="34" Margin="0,0,0,0" Foreground="White" />
                 <TextBlock x:Name="like_count" FontSize="14" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="2,0,10,0" />
             </StackPanel>
         </Grid>
-        <WebView x:Name="wv" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="auto" />
-        <Border Name="loading" Grid.Row="1" Margin="50,200,50,350">
-            <ProgressBar IsIndeterminate="True" Width="200" Height="20" HorizontalAlignment="Center" VerticalAlignment="Top" />
+        <Border Name="loading" Grid.Row="1" Margin="50,0">
+            <ProgressBar IsIndeterminate="True" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top" />
         </Border>
-        <Border Name="add_favorite_OK" Grid.Row="1" Margin="50,450,50,100" Visibility="Collapsed">
-            <TextBlock Text="收藏成功" FontSize="14" HorizontalAlignment="Center" />
-        </Border>
+
+        <SplitView x:Name="splitView" Grid.Row="1" OpenPaneLength="220" CompactPaneLength="0" PaneBackground="BlueViolet" DisplayMode="CompactOverlay" Foreground="White" >
+            <WebView x:Name="wv" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="auto" />
+            <SplitView.Pane>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <StackPanel x:Name="profile_pane">
+
+                        <ListView IsItemClickEnabled="True" ItemClick="GoHome">
+                            <ListViewItem>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <AppBarButton x:Name="home" Icon="Home" Height="48" Width="48" Margin="-12,0,0,0" Foreground="White" Click="GoHome" />
+                                    <TextBlock Grid.Column="1" Text="首页" FontSize="16" VerticalAlignment="Center" Margin="25,0,0,0" Foreground="White" />
+                                </Grid>
+                            </ListViewItem>
+                        </ListView>
+                        <ListView IsItemClickEnabled="True" ItemClick="GoFavorite">
+                            <ListViewItem>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <AppBarButton x:Name="favorite" Icon="Favorite" Height="48" Width="48" Margin="-12,0,0,0" Foreground="White" Click="GoFavorite" />
+                                    <TextBlock Grid.Column="1" Text="收藏" FontSize="16" VerticalAlignment="Center" Margin="25,0,0,0" Foreground="White" />
+                                </Grid>
+                            </ListViewItem>
+                        </ListView>
+                    </StackPanel>
+
+                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden">
+                        <StackPanel x:Name="list_Pane" >
+                            <ListView x:Name="list_section" IsItemClickEnabled="True" ItemClick="GoSection">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="48" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="1" Text="{Binding Name}" FontSize="14" VerticalAlignment="Center" Margin="15,0,0,0" Foreground="White" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackPanel>
+                    </ScrollViewer>
+
+                    <StackPanel Grid.Row="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="48" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <AppBarSeparator RenderTransformOrigin="0.5,0.5" Margin="0,0,0,0" Foreground="White" >
+                                <AppBarSeparator.RenderTransform>
+                                    <CompositeTransform Rotation="90"/>
+                                </AppBarSeparator.RenderTransform>
+                            </AppBarSeparator>
+                        </Grid>
+
+                        <ListView x:Name="setting_pane" IsItemClickEnabled="True" ItemClick="GoSetting" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <AppBarButton x:Name="btn_Setting" Icon="Setting" Height="48" Width="48" Margin="-12,0,0,0" Foreground="White" Click="GoSetting" />
+                                <TextBlock Grid.Column="1" Text="设置" FontSize="16" VerticalAlignment="Center" Margin="25,0,0,0" Foreground="White" />
+                            </Grid>
+                        </ListView>
+                    </StackPanel>
+                </Grid>
+            </SplitView.Pane>
+        </SplitView>
+
+        <Button Name="add_favorite_OK" Grid.Row="1" 
+                Content="收藏成功" Foreground="White" FontSize="12" Width="200" Height="50" Background="LightGray"
+                Margin="50,450,50,100" HorizontalAlignment="Center"
+                Click="closeMsg" Visibility="Collapsed" />
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Value="750" Target="wv.Width" />
+                        <Setter Value="48" Target="splitView.CompactPaneLength" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
     </Grid>
 </Page>

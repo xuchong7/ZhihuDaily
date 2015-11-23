@@ -12,76 +12,177 @@
             <RowDefinition Height="48" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal">
-            <AppBarButton x:Name="btn_Back" Icon="Back" Width="48" Click="go_Back" />
-            <TextBlock x:Name="header" Text="评论" FontSize="20" Margin="10,10,0,0" />
+        <StackPanel Orientation="Horizontal" Background="BlueViolet">
+            <AppBarButton x:Name="btn_Back" Icon="Back" Width="48" Click="go_Back" Foreground="White" />
+            <TextBlock x:Name="header" Text="评论" FontSize="20" Margin="10,10,0,0" Foreground="White" />
         </StackPanel>
 
-        <Pivot x:Name="pivot" Grid.Row="1">
-            <PivotItem Header="长评论" FontSize="18">
-                <ListView x:Name="long_lv">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid Margin="5,5,5,15">
+        <Border Name="loading" Grid.Row="1" Margin="50,50">
+            <ProgressBar IsIndeterminate="True" Width="200" HorizontalAlignment="Center" VerticalAlignment="Top" />
+        </Border>
+
+        <SplitView x:Name="splitView" Grid.Row="1" OpenPaneLength="220" CompactPaneLength="0" PaneBackground="BlueViolet" DisplayMode="CompactOverlay" Foreground="White">
+            <Pivot x:Name="pivot" Grid.Row="1" Background="LightCyan"  HorizontalAlignment="Center">
+                <PivotItem Header="长评论" FontSize="18">
+                    <ListView x:Name="long_lv">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="5,5,5,15">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Orientation="Vertical" Margin="5">
+                                        <Image x:Name="avatar" Height="50" Width="50" VerticalAlignment="Top" Source="{Binding avatar}" />
+                                    </StackPanel>
+                                    <Grid Grid.Column="1" Margin="5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="50" />
+                                            <RowDefinition Height="auto" />
+                                            <RowDefinition Height="auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock x:Name="user_name" FontSize="14" Foreground="DarkGreen" Text="{Binding author}" />
+                                        </Grid>
+                                        <TextBlock x:Name="comment" FontSize="15" Grid.Row="1" Text="{Binding content}" TextWrapping="Wrap"  Margin="0,3,0,0" />
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </PivotItem>
+                <PivotItem Header="短评论" FontSize="18">
+                    <ListView x:Name="short_lv">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="5,5,5,15">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Orientation="Vertical" Margin="5">
+                                        <Image x:Name="avatar" Height="50" Width="50" VerticalAlignment="Top" Source="{Binding avatar}" />
+                                    </StackPanel>
+                                    <Grid Grid.Column="1" Margin="5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="50" />
+                                            <RowDefinition Height="auto" />
+                                            <RowDefinition Height="auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock x:Name="user_name" FontSize="14" Foreground="DarkGreen" Text="{Binding author}" />
+                                        </Grid>
+                                        <TextBlock x:Name="comment" FontSize="15" Grid.Row="1" Text="{Binding content}" TextWrapping="Wrap" Margin="0,3,0,0" />
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </PivotItem>
+            </Pivot>
+
+            <SplitView.Pane>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <StackPanel x:Name="profile_pane">
+
+                        <ListView IsItemClickEnabled="True" ItemClick="GoHome">
+                            <ListViewItem>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <AppBarButton x:Name="home" Icon="Home" Height="48" Width="48" Margin="-12,0,0,0" Foreground="White" Click="GoHome" />
+                                    <TextBlock Grid.Column="1" Text="首页" FontSize="16" VerticalAlignment="Center" Margin="25,0,0,0" Foreground="White" />
+                                </Grid>
+                            </ListViewItem>
+                        </ListView>
+                        <ListView IsItemClickEnabled="True" ItemClick="GoFavorite">
+                            <ListViewItem>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <AppBarButton x:Name="favorite" Icon="Favorite" Height="48" Width="48" Margin="-12,0,0,0" Foreground="White" Click="GoFavorite" />
+                                    <TextBlock Grid.Column="1" Text="收藏" FontSize="16" VerticalAlignment="Center" Margin="25,0,0,0" Foreground="White" />
+                                </Grid>
+                            </ListViewItem>
+                        </ListView>
+                    </StackPanel>
+
+                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden">
+                        <StackPanel x:Name="list_Pane" >
+                            <ListView x:Name="list_section" IsItemClickEnabled="True" ItemClick="GoSection">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="48" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="1" Text="{Binding Name}" FontSize="14" VerticalAlignment="Center" Margin="15,0,0,0" Foreground="White" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackPanel>
+                    </ScrollViewer>
+
+                    <StackPanel Grid.Row="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="48" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <AppBarSeparator RenderTransformOrigin="0.5,0.5" Margin="0,0,0,0" Foreground="White" >
+                                <AppBarSeparator.RenderTransform>
+                                    <CompositeTransform Rotation="90"/>
+                                </AppBarSeparator.RenderTransform>
+                            </AppBarSeparator>
+                        </Grid>
+
+                        <ListView x:Name="setting_pane" IsItemClickEnabled="True" ItemClick="GoSetting" >
+                            <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="auto" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <StackPanel Orientation="Vertical" Margin="5">
-                                    <Image x:Name="avatar" Height="40" Width="40" VerticalAlignment="Top" Source="{Binding avatar}" />
-                                </StackPanel>
-                                <Grid Grid.Column="1" Margin="5">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="40" />
-                                        <RowDefinition Height="auto" />
-                                    </Grid.RowDefinitions>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="auto" />
-                                        </Grid.ColumnDefinitions>
-                                        <TextBlock x:Name="user_name" FontSize="13" Text="{Binding author}" />
-                                        <!--<AppBarButton x:Name="upvote" Icon="Like" Width="20" Height="20" Grid.Column="1" />-->
-                                    </Grid>
-                                    <TextBlock x:Name="comment" FontSize="13" Grid.Row="1" Text="{Binding content}" TextWrapping="Wrap" />
-                                </Grid>
+                                <AppBarButton x:Name="btn_Setting" Icon="Setting" Height="48" Width="48" Margin="-12,0,0,0" Foreground="White" Click="GoSetting" />
+                                <TextBlock Grid.Column="1" Text="设置" FontSize="16" VerticalAlignment="Center" Margin="25,0,0,0" Foreground="White" />
                             </Grid>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </PivotItem>
-            <PivotItem Header="短评论" FontSize="18">
-                <ListView x:Name="short_lv">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid Margin="5,5,5,10">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <StackPanel Orientation="Vertical">
-                                    <Image x:Name="s_avatar" Height="40" Width="40" Source="{Binding s_avatar}" VerticalAlignment="Top" />
-                                </StackPanel>
-                                <Grid Grid.Column="1">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="40" />
-                                        <RowDefinition Height="auto" />
-                                    </Grid.RowDefinitions>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="auto" />
-                                        </Grid.ColumnDefinitions>
-                                        <TextBlock x:Name="s_user_name" FontSize="13" Text="{Binding s_author}" />
-                                        <AppBarButton x:Name="s_upvote" Icon="Like" Width="10" Height="10" Grid.Column="1" />
-                                    </Grid>
-                                    <TextBlock x:Name="s_comment" FontSize="13" Text="{Binding s_content}" TextWrapping="Wrap" Grid.Row="1" />
-                                </Grid>
-                            </Grid>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </PivotItem>
-        </Pivot>
+                        </ListView>
+                    </StackPanel>
+                </Grid>
+            </SplitView.Pane>
+        </SplitView>
+
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Value="750" Target="pivot.Width" />
+                        <Setter Value="48" Target="splitView.CompactPaneLength" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
     </Grid>
 </Page>

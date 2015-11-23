@@ -38,6 +38,10 @@ namespace ZhihuDaily
         public SectionPage()
         {
             this.InitializeComponent();
+
+            //Cache Enable
+            this.NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
+
             st_items = new ObservableCollection<StoryItem>();
             t_items = new ObservableCollection<StoryItem>();
             s_items = new ObservableCollection<SectionItem>();
@@ -49,6 +53,8 @@ namespace ZhihuDaily
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             s_items.Clear();
+            st_items.Clear();
+            e_items.Clear();
             GetSectionData();
             try
             {
@@ -193,6 +199,21 @@ namespace ZhihuDaily
             navigate_item.Add("image", image);
             navigate_item.Add("date", date);
             this.Frame.Navigate(typeof(storyPage), navigate_item);
+        }
+
+        private void GoSetting(object sender, ItemClickEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SettingPage));
+        }
+
+        private void GoSetting(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SettingPage));
+        }
+
+        private void ReFresh(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SectionPage), navigated_item);
         }
     }
 }

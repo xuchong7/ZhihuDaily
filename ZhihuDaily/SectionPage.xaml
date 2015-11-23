@@ -28,14 +28,13 @@
                 <TextBlock x:Name="header_Content" Margin="10,10,0,0" FontSize="20" Foreground="White" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Column="1">
-                <AppBarButton x:Name="Search" Icon="Find" Width="48" Height="48" Margin="5,0,10,0" Foreground="White" />
+                <AppBarButton x:Name="refresh" Icon="Refresh" Width="48" Height="48" Margin="5,0,5,0" Foreground="White" Click="ReFresh" />
             </StackPanel>
         </Grid>
 
-        <SplitView x:Name="splitView" Grid.Row="1" OpenPaneLength="200" CompactPaneLength="48" PaneBackground="BlueViolet" DisplayMode="CompactOverlay" Foreground="White" >
+        <SplitView x:Name="splitView" Grid.Row="1" OpenPaneLength="220" CompactPaneLength="0" PaneBackground="BlueViolet" DisplayMode="CompactOverlay" Foreground="White" >
 
             <ScrollViewer VerticalScrollBarVisibility="Hidden" VerticalScrollMode="Auto">
-                <!--<StackPanel Orientation="Vertical">-->
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
@@ -58,24 +57,22 @@
                         <ListView x:Name="editors" ItemsPanel="{StaticResource tmpWrap}" VerticalAlignment="Center">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <Image Height="30" Width="30" Source="{Binding Avatar}" />
+                                    <RelativePanel Width="40">
+                                        <Image Height="30" Width="30" Source="{Binding Avatar}" HorizontalAlignment="Center" />
+                                    </RelativePanel>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
                     </StackPanel>
-                    
+
                     <StackPanel Grid.Row="2" Orientation="Vertical" Background="White">
-                        <ListView x:Name="list_Stories" SelectionMode="None" IsItemClickEnabled="True" ItemClick="GoStoryPage" >
+                        <ListView x:Name="list_Stories" SelectionMode="None" IsItemClickEnabled="True" ItemClick="GoStoryPage" HorizontalAlignment="Center">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
-                                    <Grid Margin="5" Padding="5">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="auto" />
-                                            <ColumnDefinition Width="*" />
-                                        </Grid.ColumnDefinitions>
-                                        <TextBlock x:Name="Title" FontSize="16" Text="{Binding Title}" TextWrapping="Wrap" Grid.Column="1" Margin="5,0,0,0" />
-                                        <Image x:Name="Image" Height="60" Width="70" Source="{Binding Image}" Margin="0,0,5,0" HorizontalAlignment="Right" Grid.Column="0" />
-                                    </Grid>
+                                    <RelativePanel x:Name="story_item" Margin="20, 10" Width="420" Height="80" Background="LightCyan">
+                                        <Image x:Name="Image" Height="70" Width="70" Margin="10,5,5,5" Source="{Binding Image}"/>
+                                        <TextBlock x:Name="Title" TextWrapping="Wrap" Margin="5,5,10,5" Text="{Binding Title}" FontSize="16" Height="auto" RelativePanel.RightOf="Image" RelativePanel.Below="" />
+                                    </RelativePanel>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                             <ListView.GroupStyle>
@@ -89,10 +86,7 @@
                             </ListView.GroupStyle>
                         </ListView>
                     </StackPanel>
-
                 </Grid>
-
-                <!--</StackPanel>-->
             </ScrollViewer>
 
             <SplitView.Pane>
@@ -108,11 +102,11 @@
                             <ListViewItem>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="52" />
+                                        <ColumnDefinition Width="auto" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <AppBarButton x:Name="home" Icon="Home" Margin="-22,0,0,0" Height="48" Foreground="White" Click="GoHome" />
-                                    <TextBlock Grid.Column="1" Text="首页" FontSize="16" VerticalAlignment="Center" Margin="15,0,0,0" Foreground="White" />
+                                    <AppBarButton x:Name="home" Icon="Home" Height="48" Width="48" Margin="-12,0,0,0" Foreground="White" Click="GoHome" />
+                                    <TextBlock Grid.Column="1" Text="首页" FontSize="16" VerticalAlignment="Center" Margin="25,0,0,0" Foreground="White" />
                                 </Grid>
                             </ListViewItem>
                         </ListView>
@@ -120,11 +114,11 @@
                             <ListViewItem>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="52" />
+                                        <ColumnDefinition Width="auto" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <AppBarButton x:Name="favorite" Icon="Favorite" Margin="-22,0,0,0" Height="48" Foreground="White" Click="GoFavorite" />
-                                    <TextBlock Grid.Column="1" Text="收藏" FontSize="16" VerticalAlignment="Center" Margin="15,0,0,0" Foreground="White" />
+                                    <AppBarButton x:Name="favorite" Icon="Favorite" Height="48" Width="48" Margin="-12,0,0,0" Foreground="White" Click="GoFavorite" />
+                                    <TextBlock Grid.Column="1" Text="收藏" FontSize="16" VerticalAlignment="Center" Margin="25,0,0,0" Foreground="White" />
                                 </Grid>
                             </ListViewItem>
                         </ListView>
@@ -137,7 +131,7 @@
                                     <DataTemplate>
                                         <Grid>
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="52" />
+                                                <ColumnDefinition Width="48" />
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
                                             <TextBlock Grid.Column="1" Text="{Binding Name}" FontSize="14" VerticalAlignment="Center" Margin="15,0,0,0" Foreground="White" />
@@ -161,20 +155,46 @@
                             </AppBarSeparator>
                         </Grid>
 
-                        <ListView x:Name="setting_pane" IsItemClickEnabled="True" >
+                        <ListView x:Name="setting_pane" IsItemClickEnabled="True" ItemClick="GoSetting" >
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="auto" />
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
-                                <AppBarButton x:Name="btn_Setting" Icon="Setting" Height="48" Margin="-22,0,0,0" Foreground="White" />
-                                <TextBlock Grid.Column="1" Text="设置" FontSize="16" VerticalAlignment="Center" Margin="15,0,0,0" Foreground="White" />
+                                <AppBarButton x:Name="btn_Setting" Icon="Setting" Height="48" Width="48" Margin="-12,0,0,0" Foreground="White" Click="GoSetting" />
+                                <TextBlock Grid.Column="1" Text="设置" FontSize="16" VerticalAlignment="Center" Margin="25,0,0,0" Foreground="White" />
                             </Grid>
                         </ListView>
                     </StackPanel>
-
                 </Grid>
             </SplitView.Pane>
         </SplitView>
+
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Value="48" Target="splitView.CompactPaneLength" />
+                        <Setter Value="{StaticResource tmpWrap}" Target="list_Stories.ItemsPanel" />
+                        <Setter Value="250" Target="flip_TopStories.Height" />
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1200" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Value="220" Target="splitView.CompactPaneLength" />
+                        <Setter Value="{StaticResource tmpWrap}" Target="list_Stories.ItemsPanel" />
+                        <Setter Value="300" Target="flip_TopStories.Height" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
     </Grid>
 </Page>

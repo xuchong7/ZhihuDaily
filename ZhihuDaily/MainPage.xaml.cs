@@ -33,10 +33,14 @@ namespace ZhihuDaily
         Dictionary<string, string> navigated_item;
 
         Uri source_uri;
+        int hadLoad = 0;
 
         public MainPage()
         {
             this.InitializeComponent();
+
+            //Cache Enable
+            this.NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
 
             s_items = new ObservableCollection<SectionItem>();
             this.list_section.ItemsSource = s_items;
@@ -44,12 +48,15 @@ namespace ZhihuDaily
             st_items = new ObservableCollection<StoryItem>();
 
             t_items = new ObservableCollection<StoryItem>();
+            
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             #region init section items
             s_items.Clear();
+            st_items.Clear();
+            t_items.Clear();
             GetSectionData();
             #endregion
 
@@ -84,9 +91,20 @@ namespace ZhihuDaily
             string data = await client.GetStringAsync(source_uri);
             JsonObject json_data = JsonObject.Parse(data);
 
-            #region Get stories list
+            //Latest stories
+            JsonArray latestArray = json_data.GetNamedArray("stories");
+            foreach (var item in latestArray)
+            {
+                string stringItem = item.ToString();
+                JsonObject jsonItem = JsonObject.Parse(stringItem);
+                string title = jsonItem.GetNamedString("title");
+                string id = jsonItem.GetNamedNumber("id").ToString();
+                string image = jsonItem.GetNamedArray("images")[0].ToString().Replace("\"", "");
+                st_items.Add(new StoryItem { Date = "今日消息", Title = title, Id = id, Image = image });
+            }
 
-            for (int i = 0; i < 3; i++)
+            #region Get stories list
+            for (int i = 0; i < 1; i++)
             {
                 int howManyDaysBefore = 0 - i;
                 string date = DateTime.Now.AddDays(howManyDaysBefore).ToString("yyyy年MM月dd日");
@@ -127,20 +145,11 @@ namespace ZhihuDaily
             this.flip_TopStories.ItemsSource = t_items;
         }
 
-        private void dataSource_LoadItemsCompleted(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void dataSource_LoadItemsStarted(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
         #endregion
 
         private void GoStoryPage(object sender, ItemClickEventArgs e)
         {
-            StoryItem item = (StoryItem)e.ClickedItem;
+            StoryItem item = (StoryItem)flip_TopStories.SelectedItem;
             string id = item.Id;
             string title = item.Title;
             string image = item.Image;
@@ -186,7 +195,82 @@ namespace ZhihuDaily
 
         private void PaneClick(object sender, RoutedEventArgs e)
         {
-            this.splitView.IsPaneOpen = !this.splitView.IsPaneOpen;
+            if (Window.Current.CoreWindow.Bounds.Width >=1200)
+            {
+                if (this.splitView.CompactPaneLength == 220)
+                {
+                    this.splitView.CompactPaneLength = 48;
+                }
+                else
+                {
+                    this.splitView.CompactPaneLength = 220;
+                }
+            }
+            else
+            {
+                this.splitView.IsPaneOpen = !this.splitView.IsPaneOpen;
+            }
+            
+        }
+
+        private void ChangePaneLength(object sender, RoutedEventArgs e)
+        {
+            if (this.splitView.CompactPaneLength == 220)
+            {
+                this.splitView.CompactPaneLength = 48;
+            }
+            else
+            {
+                this.splitView.CompactPaneLength = 220;
+            }
+        }
+
+        //TODO Load MOre Items
+        private void LoadMoreItems(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            button.Content = "Loading...";
+
+            int howManyDaysBefore = 0 - hadLoad - 1;
+            string date = DateTime.Now.AddDays(howManyDaysBefore).ToString("yyyy年MM月dd日");
+            string stringDate = date.Replace("年", "").Replace("月", "").Replace("日", "");
+            Uri sourceUri = new Uri("http://news.at.zhihu.com/api/4/news/before/" + stringDate);
+            LoadMoreItemsAsync(sourceUri, date);
+            hadLoad++;
+        }
+
+        private async void LoadMoreItemsAsync(Uri sourceUri, string date)
+        {
+            HttpClient client = new HttpClient();
+            string stringData = await client.GetStringAsync(sourceUri);
+            JsonObject jsonData = JsonObject.Parse(stringData);
+            JsonArray jsonStoriesArray = jsonData.GetNamedArray("stories");
+            foreach (var item in jsonStoriesArray)
+            {
+                string stringItem = item.ToString();
+                JsonObject jsonItem = JsonObject.Parse(stringItem);
+                string title = jsonItem.GetNamedString("title");
+                string id = jsonItem.GetNamedNumber("id").ToString();
+                string image = jsonItem.GetNamedArray("images")[0].ToString().Replace("\"", "");
+                st_items.Add(new StoryItem { Date = date, Title = title, Id = id, Image = image });
+            }
+            var groups = from n in st_items group n by n.Date;
+            this.cvs.Source = groups;
+        }
+
+        private void GoSetting(object sender, ItemClickEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SettingPage));
+        }
+
+        private void GoSetting(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SettingPage));
+        }
+
+        private void ReFresh(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
         }
     }
 }

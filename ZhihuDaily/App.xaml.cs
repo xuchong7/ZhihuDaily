@@ -79,6 +79,9 @@ namespace ZhihuDaily
             }
             // Ensure the current window is active
             Window.Current.Activate();
+
+            //CacheSize
+            rootFrame.CacheSize = 3;
         }
 
         /// <summary>

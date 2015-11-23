@@ -34,11 +34,6 @@ namespace ZhihuDaily
             
         }
 
-        private void go_Back(object sender, RoutedEventArgs e)
-        {
-            this.Frame.GoBack();
-        }
-
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             GetFavoriteStories();
@@ -76,7 +71,7 @@ namespace ZhihuDaily
             
         }
 
-        private void go_StoryPage(object sender, ItemClickEventArgs e)
+        private void GoStoryPage(object sender, ItemClickEventArgs e)
         {
             StoryItem item = (StoryItem)e.ClickedItem;
             string id = item.Id;
@@ -89,6 +84,16 @@ namespace ZhihuDaily
             navigate_item.Add("image", image);
             navigate_item.Add("date", date);
             this.Frame.Navigate(typeof(storyPage), navigate_item);
+        }
+
+        private void ReFresh(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(FavoritePage));
+        }
+
+        private void GoBack(object sender, RoutedEventArgs e)
+        {
+            this.Frame.GoBack();
         }
     }
 }

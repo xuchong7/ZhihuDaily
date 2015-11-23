@@ -36,6 +36,9 @@ namespace ZhihuDaily
         public storyPage()
         {
             this.InitializeComponent();
+
+            //Cache Enable
+            this.NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -51,7 +54,7 @@ namespace ZhihuDaily
                 Uri extra_uri = new Uri("http://news-at.zhihu.com/api/4/story-extra/" + navigated_item["id"]);
                 this.loading.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 GetStory(story_uri, extra_uri);
-                this.loading.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                
             }
         }
 
@@ -96,17 +99,12 @@ namespace ZhihuDaily
             }
         }
 
-        private void go_Back(object sender, RoutedEventArgs e)
+        private void GoBack(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
         }
 
-        private void go_Home(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(MainPage));
-        }
-
-        private void go_Comments(object sender, RoutedEventArgs e)
+        private void GoComments(object sender, RoutedEventArgs e)
         {
             navigate_item = navigated_item;
             this.Frame.Navigate(typeof(CommentsPage), navigate_item);
@@ -137,16 +135,68 @@ namespace ZhihuDaily
             
         }
 
-        private void AddFavoriteNotice(Border notice_border)
+        private void AddFavoriteNotice(Button notice_border)
         {
             
             string now = System.DateTime.Now.Second.ToString();
             notice_border.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            //while (now == System.DateTime.Now.Second.ToString())
-            //{
-                
-            //}
-            //notice_border.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
         }
+
+        private void closeMsg(object sender, RoutedEventArgs e)
+        {
+            this.add_favorite_OK.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        }
+
+        private void GoHome(object sender, ItemClickEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
+        }
+
+        private void GoHome(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
+        }
+
+        private void GoFavorite(object sender, ItemClickEventArgs e)
+        {
+            this.Frame.Navigate(typeof(FavoritePage));
+        }
+
+        private void GoFavorite(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(FavoritePage));
+        }
+
+        private void GoSection(object sender, ItemClickEventArgs e)
+        {
+            SectionItem item = (SectionItem)e.ClickedItem;
+            string uri = "http://news-at.zhihu.com/api/4/theme/" + item.Id;
+            string title = item.Name;
+            navigate_item = new Dictionary<string, string>();
+            navigate_item.Add("title", title);
+            navigate_item.Add("uri", uri);
+            this.Frame.Navigate(typeof(SectionPage), navigate_item);
+        }
+
+        private void ReFresh(object sender, RoutedEventArgs e)
+        {
+            navigate_item = new Dictionary<string, string>();
+            navigate_item.Add("id", story_id);
+            navigate_item.Add("title", story_title);
+            navigate_item.Add("image", story_image);
+            navigate_item.Add("date", story_date);
+            this.Frame.Navigate(typeof(storyPage), navigate_item);
+        }
+
+        private void GoSetting(object sender, ItemClickEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SettingPage));
+        }
+
+        private void GoSetting(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SettingPage));
+        }
+        
     }
 }
