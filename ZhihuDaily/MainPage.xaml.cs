@@ -149,7 +149,16 @@ namespace ZhihuDaily
 
         private void GoStoryPage(object sender, ItemClickEventArgs e)
         {
-            StoryItem item = (StoryItem)flip_TopStories.SelectedItem;
+            StoryItem item;
+            try
+            {
+                item = (StoryItem)e.ClickedItem;
+            }
+            catch (Exception)
+            {
+                item = (StoryItem)flip_TopStories.SelectedItem;
+            }
+            
             string id = item.Id;
             string title = item.Title;
             string image = item.Image;
