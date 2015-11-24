@@ -1,4 +1,3 @@
-C:\Users\xu_cc\documents\visual studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x86\Debug\ZhihuDaily.csprojResolveAssemblyReference.cache
 C:\Users\xu_cc\documents\visual studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x86\Debug\App.g.i.cs
 C:\Users\xu_cc\documents\visual studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x86\Debug\App.g.cs
 C:\Users\xu_cc\documents\visual studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x86\Debug\MainPage.g.i.cs
@@ -24,7 +23,6 @@ C:\Users\xu_cc\documents\visual studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x
 C:\Users\xu_cc\documents\visual studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square150x150Logo.scale-200.png
 C:\Users\xu_cc\documents\visual studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square44x44Logo.scale-200.png
 C:\Users\xu_cc\documents\visual studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square44x44Logo.targetsize-24_altform-unplated.png
-C:\Users\xu_cc\documents\visual studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\StoreLogo.png
 C:\Users\xu_cc\documents\visual studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Wide310x150Logo.scale-200.png
 C:\Users\xu_cc\documents\visual studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\ClrCompression.dll
 C:\Users\xu_cc\documents\visual studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\entrypoint\ZhihuDaily.exe
@@ -448,7 +446,6 @@ C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x
 C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x86\Debug\FavoritePage.xaml
 C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x86\Debug\FavoritePage.xbf
 C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\FavoritePage.xbf
-C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\StoryCss.css
 C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x86\Debug\SectionPage.g.i.cs
 C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x86\Debug\SectionPage.g.cs
 C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x86\Debug\SectionPage.xaml
@@ -537,3 +534,4 @@ C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x
 C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x86\Debug\Core\Assets\Wide310x150Logo.scale-125.png
 C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x86\Debug\Core\Assets\Wide310x150Logo.scale-150.png
 C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x86\Debug\Core\Assets\Wide310x150Logo.scale-400.png
+C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x86\Debug\ZhihuDaily.csprojResolveAssemblyReference.cache

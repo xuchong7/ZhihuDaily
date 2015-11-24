@@ -39,6 +39,9 @@ namespace ZhihuDaily
 
             //Cache Enable
             this.NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
+
+            this.unstar.IsEnabled = false;
+            this.star.IsEnabled = true;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -56,7 +59,28 @@ namespace ZhihuDaily
 
                 this.header_text.Text = story_title;
                 GetStory(story_uri, extra_uri);
+
+                CheckIsFavorite(story_id);
                 
+            }
+        }
+
+        private async void CheckIsFavorite(string story_id)
+        {
+            try
+            {
+                string data = await PathIO.ReadTextAsync("ms-appdata:///local/FavoriteData.txt");
+                if (data.IndexOf(story_id) != -1)
+                {
+                    this.star.IsEnabled = false;
+                    this.star.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                    this.unstar.IsEnabled = true;
+                    this.unstar.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                }
+            }
+            catch (Exception)
+            {
+
             }
         }
 
@@ -126,9 +150,13 @@ namespace ZhihuDaily
                 StorageFile favoriteFile = await local.CreateFileAsync("FavoriteData.txt", CreationCollisionOption.OpenIfExists);
                 await FileIO.AppendLinesAsync(favoriteFile, lines);
 
-                favorite_button.IsEnabled = true;
-                this.add_favorite_OK.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                AddFavoriteNotice(this.add_favorite_OK);
+                
+                this.star.IsEnabled = false;
+                this.star.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                this.unstar.IsEnabled = true;
+                this.unstar.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                //this.notice.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                Notice(this.notice, "收藏成功");
             }
             catch (Exception)
             {
@@ -137,16 +165,42 @@ namespace ZhihuDaily
             
         }
 
-        private void AddFavoriteNotice(Button notice_border)
+        private void Notice(Button notice_border, string msg)
         {
             
             string now = System.DateTime.Now.Second.ToString();
+            notice_border.Content = msg;
             notice_border.Visibility = Windows.UI.Xaml.Visibility.Visible;
+        }
+
+        private async void DelFavorite(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string data = await PathIO.ReadTextAsync("ms-appdata:///local/FavoriteData.txt");
+                int index = data.IndexOf(story_id) + 1;
+                string newData = data.Insert(index, "000000");
+
+                StorageFolder local = ApplicationData.Current.LocalFolder;
+                StorageFile favoriteFile = await local.CreateFileAsync("FavoriteData.txt", CreationCollisionOption.OpenIfExists);
+                await FileIO.WriteTextAsync(favoriteFile, newData);
+
+                this.unstar.IsEnabled = false;
+                this.unstar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                this.star.IsEnabled = true;
+                this.star.Visibility = Windows.UI.Xaml.Visibility.Visible;
+
+                Notice(this.notice, "取消成功");
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void closeMsg(object sender, RoutedEventArgs e)
         {
-            this.add_favorite_OK.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            this.notice.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
         }
 
         private void GoHome(object sender, ItemClickEventArgs e)
@@ -199,6 +253,7 @@ namespace ZhihuDaily
         {
             this.Frame.Navigate(typeof(SettingPage));
         }
+
         
     }
 }

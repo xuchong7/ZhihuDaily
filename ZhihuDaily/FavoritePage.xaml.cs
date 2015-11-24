@@ -49,14 +49,25 @@ namespace ZhihuDaily
                 int count = 0;
                 foreach (var item in data)
                 {
-                    string favorite_item = item.ToString();
-                    JsonObject json_favorite_item = JsonObject.Parse(favorite_item);
-                    string title = json_favorite_item.GetNamedString("title");
-                    string image = json_favorite_item.GetNamedString("image");
-                    string date = json_favorite_item.GetNamedString("date");
-                    string id = json_favorite_item.GetNamedString("id");
-                    st_items.Add(new StoryItem { Title = title, Date = date, Id = id, Image = image });
-                    count += 1;
+                    try
+                    {
+                        string favorite_item = item.ToString();
+                        if (favorite_item.IndexOf("000000") == -1)
+                        {
+                            JsonObject json_favorite_item = JsonObject.Parse(favorite_item);
+                            string title = json_favorite_item.GetNamedString("title");
+                            string image = json_favorite_item.GetNamedString("image");
+                            string date = json_favorite_item.GetNamedString("date");
+                            string id = json_favorite_item.GetNamedString("id");
+                            st_items.Add(new StoryItem { Title = title, Date = date, Id = id, Image = image });
+                            count += 1;
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                    }
+                    
                 }
                 var groups = from n in st_items group n by n.Date;
                 this.cvs.Source = groups;

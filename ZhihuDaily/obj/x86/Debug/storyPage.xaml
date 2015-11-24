@@ -18,15 +18,17 @@
                 <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal" >
-                <AppBarButton x:ConnectionId='21' x:Name="btn_Back" Icon="Back"                Width="48" Foreground="White" />
+                <AppBarButton x:ConnectionId='22' x:Name="btn_Back" Icon="Back"                Width="48" Foreground="White" />
+                <TextBlock x:ConnectionId='23' x:Name="header_text" FontSize="16" Foreground="White" Margin="10,13,0,0" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Column="1">
                 <AppBarButton x:ConnectionId='15' x:Name="share" Icon="Refresh" Width="48" Foreground="White"                 />
                 <AppBarButton x:ConnectionId='16' x:Name="star" Icon="Favorite" Width="48"                     Foreground="White" />
-                <AppBarButton x:ConnectionId='17' x:Name="comments" Icon="Comment" Width="34"                    Foreground="White" />
-                <TextBlock x:ConnectionId='18' x:Name="comments_count"  FontSize="14" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="2,0,10,0" />
-                <AppBarButton x:ConnectionId='19' x:Name="upvote" Icon="Like" Width="34" Margin="0,0,0,0" Foreground="White" />
-                <TextBlock x:ConnectionId='20' x:Name="like_count" FontSize="14" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="2,0,10,0" />
+                <AppBarButton x:ConnectionId='17' x:Name="unstar" Icon="UnFavorite" Width="48"                     Foreground="White" Visibility="Collapsed" />
+                <AppBarButton x:ConnectionId='18' x:Name="comments" Icon="Comment" Width="34"                    Foreground="White" />
+                <TextBlock x:ConnectionId='19' x:Name="comments_count"  FontSize="14" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="2,0,10,0" />
+                <AppBarButton x:ConnectionId='20' x:Name="upvote" Icon="Like" Width="34" Margin="0,0,0,0" Foreground="White" />
+                <TextBlock x:ConnectionId='21' x:Name="like_count" FontSize="14" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="2,0,10,0" />
             </StackPanel>
         </Grid>
         <Border x:ConnectionId='2' Name="loading" Grid.Row="1" Margin="50,0">
@@ -116,7 +118,7 @@
             </SplitView.Pane>
         </SplitView>
 
-        <Button x:ConnectionId='4' Name="add_favorite_OK" Grid.Row="1" 
+        <Button x:ConnectionId='4' Name="notice" Grid.Row="1" 
                 Content="收藏成功" Foreground="White" FontSize="12" Width="200" Height="50" Background="LightGray"
                 Margin="50,450,50,100" HorizontalAlignment="Center"
                                  Visibility="Collapsed" />
