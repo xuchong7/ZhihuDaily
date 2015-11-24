@@ -53,6 +53,8 @@ namespace ZhihuDaily
                 Uri story_uri = new Uri("http://news-at.zhihu.com/api/4/news/" + navigated_item["id"]);
                 Uri extra_uri = new Uri("http://news-at.zhihu.com/api/4/story-extra/" + navigated_item["id"]);
                 this.loading.Visibility = Windows.UI.Xaml.Visibility.Visible;
+
+                this.header_text.Text = story_title;
                 GetStory(story_uri, extra_uri);
                 
             }

@@ -19,6 +19,7 @@
             </Grid.ColumnDefinitions>
             <StackPanel Orientation="Horizontal" >
                 <AppBarButton x:Name="btn_Back" Icon="Back" Click="GoBack" Width="48" Foreground="White" />
+                <TextBlock x:Name="header_text" FontSize="16" Foreground="White" Margin="10,13,0,0" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Grid.Column="1">
                 <AppBarButton x:Name="share" Icon="Refresh" Width="48" Foreground="White" Click="ReFresh" />

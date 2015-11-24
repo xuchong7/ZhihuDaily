@@ -238,7 +238,6 @@ namespace ZhihuDaily
         private void LoadMoreItems(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
-            button.Content = "Loading...";
 
             int howManyDaysBefore = 0 - hadLoad - 1;
             string date = DateTime.Now.AddDays(howManyDaysBefore).ToString("yyyy年MM月dd日");
