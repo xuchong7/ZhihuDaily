@@ -101,6 +101,7 @@ namespace ZhihuDaily
             this.list_Stories.ItemsSource = st_items;
 
             //Section TopImage
+            t_items.Clear();
             string t_title = json_data.GetNamedString("description");
             string t_image = json_data.GetNamedString("image");
             t_items.Add(new StoryItem { Title = t_title, Image = t_image, Date = "today", Id = "1" });

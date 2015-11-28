@@ -51,6 +51,8 @@ namespace ZhihuDaily
             Uri long_comments_uri = new Uri("http://news-at.zhihu.com/api/4/story/" + navigated_item["id"] + "/long-comments");
             Uri short_comments_uri = new Uri("http://news-at.zhihu.com/api/4/story/" + navigated_item["id"] + "/short-comments");
 
+            this.header.Text = "评论 · " + navigated_item["title"];
+
             GetComments(long_comments_uri, lc_items);
             GetComments(short_comments_uri, sc_items);
         }

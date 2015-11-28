@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Background="BlueViolet">
             <AppBarButton x:Name="btn_Back" Icon="Back" Width="48" Click="go_Back" Foreground="White" />
-            <TextBlock x:Name="header" Text="评论" FontSize="20" Margin="10,10,0,0" Foreground="White" />
+            <TextBlock x:Name="header" Text="评论" FontSize="16" Margin="10,13,0,0" Foreground="White" />
         </StackPanel>
 
         <Border Name="loading" Grid.Row="1" Margin="50,50">
