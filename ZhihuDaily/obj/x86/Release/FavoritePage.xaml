@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="ZhihuDaily.FavoritePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ZhihuDaily"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <CollectionViewSource x:ConnectionId='1' x:Name="cvs" x:Key="cvs" IsSourceGrouped="True" />
+        <ItemsPanelTemplate x:Key="tmpWrap">
+            <ItemsWrapGrid Orientation="Horizontal" />
+        </ItemsPanelTemplate>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid x:ConnectionId='2' x:Name="header" Background="BlueViolet">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" >
+                <AppBarButton x:ConnectionId='5' x:Name="btn_Back" Icon="Back"                Width="48" Foreground="White" />
+                <TextBlock x:ConnectionId='6' x:Name="header_Content" Margin="10,10,0,0" FontSize="20" Foreground="White" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Column="1">
+                <AppBarButton x:ConnectionId='4' x:Name="share" Icon="Refresh" Width="48" Foreground="White"                 />
+            </StackPanel>
+        </Grid>
+
+        <ListView x:ConnectionId='3' x:Name="list_Stories" Grid.Row="1" SelectionMode="None" IsItemClickEnabled="True"                         ItemsSource="{Binding Source={StaticResource cvs}}" ItemsPanel="{StaticResource tmpWrap}" HorizontalAlignment="Center">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <RelativePanel x:Name="story_item" Margin="20, 10" Width="420" Height="80" Background="LightCyan">
+                        <Image x:Name="Image" Height="70" Width="70" Margin="10,5,5,5" Source="{Binding Image}"/>
+                        <TextBlock x:Name="Title" TextWrapping="Wrap" Margin="5,5,10,5" Text="{Binding Title}" FontSize="16" Height="auto" RelativePanel.RightOf="Image" RelativePanel.Below="" />
+                    </RelativePanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock x:Name="stories_Group_Header" FontSize="16" FontWeight="Bold" Foreground="Black" Margin="5,5,5,0" Text="{Binding Key}" />
+                        </DataTemplate>
+                    </GroupStyle.HeaderTemplate>
+                </GroupStyle>
+            </ListView.GroupStyle>
+        </ListView>
+    </Grid>
+</Page>
+

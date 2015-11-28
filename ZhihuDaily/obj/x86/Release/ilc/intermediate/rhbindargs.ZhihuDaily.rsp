@@ -1,0 +1,16 @@
+/osver:6.2
+/appcontainer
+/runtime:mrt100_app
+/eh:clr
+/pdb
+"/nativelink:C:\Program Files (x86)\MSBuild\Microsoft\.NetNative\x86\ilc\lib\Native\vmath.lib"
+/methodBodyFolding
+"C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x86\Release\ilc\intermediate\MDIL\ZhihuDaily.mdilexe"
+"/i:C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x86\Release\ilc\intermediate\MDIL\"
+/out:"C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x86\Release\ilc\intermediate\Native\ZhihuDaily.exe"
+"/res:C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x86\Release\ilc\intermediate\Native.res"
+/standalone
+/shimexe
+"/nativelink:C:\Program Files (x86)\MSBuild\Microsoft\.NetNative\x86\ilc\lib\Native\Interop.Native.lib"
+"/nativelink:C:\Program Files (x86)\MSBuild\Microsoft\.NetNative\x86\ilc\lib\Native\corelib.native.lib"
+"/nativelink:C:\Program Files (x86)\MSBuild\Microsoft\.NetNative\x86\ilc\lib\Native\TypeLoader.Native.lib"

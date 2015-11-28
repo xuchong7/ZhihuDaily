@@ -10,19 +10,19 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>694828ca-bad3-4351-b351-8866828a4330</PackageIdentityName>
     <IntermediateOutputPath>C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\obj\x86\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>952E5C4B2B5727DA4D03CD0219742798BCC9A6C78E562AD95949651ED2D2FA5C</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>694828ca-bad3-4351-b351-8866828a4330_1.0.0.0_x86__jys5twdgwtes4</RegisteredPackageMoniker>
-    <RegisteredUserModeAppID>694828ca-bad3-4351-b351-8866828a4330_jys5twdgwtes4!App</RegisteredUserModeAppID>
-    <RegisteredPackageID>694828ca-bad3-4351-b351-8866828a4330</RegisteredPackageID>
-    <RegisteredPackagePublisher>CN=xu_cc</RegisteredPackagePublisher>
-    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <RegisteredManifestChecksum>CD663E9356498A3FB37DCA09A8394C5B1956BB673EAECCCB5EADFBCAD654BA24</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>29183xucc.forWin10_1.1.0.0_x86__wjg1kna7ebn82</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>29183xucc.forWin10_wjg1kna7ebn82!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>29183xucc.forWin10</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=C2AF3C1E-56EC-40AD-8436-4FC5B0E4F1FF</RegisteredPackagePublisher>
+    <RegisteredVersion>1.1.0.0</RegisteredVersion>
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-28T04:50:29.307</Modified>
+      <Modified>2015-11-28T06:09:46.550</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -33,27 +33,27 @@
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\BadgeLogo.scale-100.png">
       <PackagePath>Assets\BadgeLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T06:02:51.491</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\BadgeLogo.scale-125.png">
       <PackagePath>Assets\BadgeLogo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T06:08:42.959</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\BadgeLogo.scale-150.png">
       <PackagePath>Assets\BadgeLogo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T06:08:17.667</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\BadgeLogo.scale-200.png">
       <PackagePath>Assets\BadgeLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T06:02:33.002</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\BadgeLogo.scale-400.png">
       <PackagePath>Assets\BadgeLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T06:07:53.410</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -62,17 +62,17 @@
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-28T04:41:10.936</Modified>
+      <Modified>2015-11-28T05:41:24.048</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\SplashScreen.scale-125.png">
       <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-28T04:41:10.936</Modified>
+      <Modified>2015-11-28T05:40:20.246</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\SplashScreen.scale-150.png">
       <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-28T04:41:10.936</Modified>
+      <Modified>2015-11-28T05:38:27.445</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
@@ -82,172 +82,172 @@
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\SplashScreen.scale-400.png">
       <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-28T04:41:10.936</Modified>
+      <Modified>2015-11-28T05:33:31.258</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T05:55:14.092</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square150x150Logo.scale-125.png">
       <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T05:56:10.048</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square150x150Logo.scale-150.png">
       <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T05:55:41.388</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T05:54:38.771</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square150x150Logo.scale-400.png">
       <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T05:54:10.649</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square310x310Logo.scale-100.png">
       <PackagePath>Assets\Square310x310Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T05:58:27.211</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square310x310Logo.scale-125.png">
       <PackagePath>Assets\Square310x310Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T05:59:30.543</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square310x310Logo.scale-150.png">
       <PackagePath>Assets\Square310x310Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T05:58:57.833</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square310x310Logo.scale-200.png">
       <PackagePath>Assets\Square310x310Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T05:57:56.065</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square310x310Logo.scale-400.png">
       <PackagePath>Assets\Square310x310Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T05:57:31.577</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square44x44Logo.scale-100.png">
       <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T06:01:09.877</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square44x44Logo.scale-125.png">
       <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T06:01:49.671</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square44x44Logo.scale-150.png">
       <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T06:01:30.876</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T06:00:51.073</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square44x44Logo.scale-400.png">
       <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T06:00:28.912</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square44x44Logo.targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T06:03:11.707</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T06:02:51.491</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square44x44Logo.targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T06:02:09.215</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square44x44Logo.targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T06:02:33.002</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square71x71Logo.scale-100.png">
       <PackagePath>Assets\Square71x71Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T05:52:08.134</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square71x71Logo.scale-125.png">
       <PackagePath>Assets\Square71x71Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T05:52:53.997</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square71x71Logo.scale-150.png">
       <PackagePath>Assets\Square71x71Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T05:52:31.952</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square71x71Logo.scale-200.png">
       <PackagePath>Assets\Square71x71Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T05:51:44.642</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Square71x71Logo.scale-400.png">
       <PackagePath>Assets\Square71x71Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T05:51:21.049</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T06:06:29.490</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\StoreLogo.scale-125.png">
       <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T06:06:07.063</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\StoreLogo.scale-150.png">
       <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T06:05:38.918</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\StoreLogo.scale-200.png">
       <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T06:04:55.130</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\StoreLogo.scale-400.png">
       <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-27T10:23:20.712</Modified>
+      <Modified>2015-11-28T06:04:35.988</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Wide310x150Logo.scale-100.png">
       <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-28T04:41:10.936</Modified>
+      <Modified>2015-11-28T05:45:54.563</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Wide310x150Logo.scale-125.png">
       <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-28T04:41:10.936</Modified>
+      <Modified>2015-11-28T05:47:33.250</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Wide310x150Logo.scale-150.png">
       <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-28T04:41:10.936</Modified>
+      <Modified>2015-11-28T05:46:50.118</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-11-28T04:41:10.936</Modified>
+      <Modified>2015-11-28T05:41:24.048</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Assets\Wide310x150Logo.scale-400.png">
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
@@ -260,7 +260,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\entrypoint\ZhihuDaily.exe">
       <PackagePath>entrypoint\ZhihuDaily.exe</PackagePath>
-      <Modified>2015-11-28T04:37:16.903</Modified>
+      <Modified>2015-11-28T06:09:42.882</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -292,7 +292,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-11-28T04:50:28.525</Modified>
+      <Modified>2015-11-28T06:09:44.888</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\System.AppContext.dll">
       <PackagePath>System.AppContext.dll</PackagePath>
@@ -696,7 +696,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\ZhihuDaily.exe">
       <PackagePath>ZhihuDaily.exe</PackagePath>
-      <Modified>2015-11-28T04:50:29.298</Modified>
+      <Modified>2015-11-28T06:09:46.535</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\xu_cc\Documents\Visual Studio 2015\Projects\ZhihuDaily\ZhihuDaily\bin\x86\Debug\Core\ZhihuDaily.xr.xml">
       <PackagePath>ZhihuDaily.xr.xml</PackagePath>

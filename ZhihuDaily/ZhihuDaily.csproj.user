@@ -5,4 +5,9 @@
     <UseEmulator>false</UseEmulator>
     <UseSimulator>false</UseSimulator>
   </PropertyGroup>
+  <PropertyGroup>
+    <AppxPackageIsForStore>True</AppxPackageIsForStore>
+    <AppxShowAllApps>False</AppxShowAllApps>
+    <AppxBuildConfigurationSelection>x86|x64|arm</AppxBuildConfigurationSelection>
+  </PropertyGroup>
 </Project>
